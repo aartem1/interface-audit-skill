@@ -1,0 +1,88 @@
+{
+  "format_version": 1,
+  "audit_id": "20261110T084000Z-address-book",
+  "created_at": "2026-11-10T08:40:00Z",
+  "target": {
+    "label": "Example Address Book",
+    "identity": "example-address-book",
+    "kind": "web",
+    "location": "https://example.com/address-book",
+    "revision": "1.2.0",
+    "environment": "fixture"
+  },
+  "scope": {
+    "mode": "targeted",
+    "included": ["Leaving the address editor with an unsaved change"],
+    "excluded": ["Saving an address and all other journeys"],
+    "assumptions": [],
+    "limits": ["The mobile fixture was unavailable."]
+  },
+  "cases": [
+    {
+      "id": "CASE-001",
+      "target": "Address editor",
+      "goal": "Leave the editor without unintentionally losing an unsaved change.",
+      "context": {
+        "role": "customer",
+        "viewport_css_px": [1280, 800],
+        "input": "pointer"
+      },
+      "coverage": "exercised",
+      "reason": null
+    },
+    {
+      "id": "CASE-002",
+      "target": "Address editor",
+      "goal": "Leave the editor without unintentionally losing an unsaved change.",
+      "context": {
+        "role": "customer",
+        "viewport_css_px": [390, 844],
+        "input": "touch"
+      },
+      "coverage": "not_exercised",
+      "reason": "No mobile fixture was available."
+    }
+  ],
+  "checks": [
+    {
+      "id": "C-001",
+      "case_id": "CASE-001",
+      "criterion_id": "UX-13",
+      "subject": "Unsaved apartment number",
+      "status": "checked",
+      "verdict": false,
+      "steps": ["Enter 24 in Apartment.", "Select Orders.", "Reopen the address editor."],
+      "expected": "A warning gives the option to stay, or the draft survives reopening.",
+      "observed": "Orders opened directly. The apartment field was empty on return.",
+      "evidence": ["Desktop fixture replay on 1.2.0. Orders opened without a warning and Apartment was empty after reopening."],
+      "reason": null
+    },
+    {
+      "id": "C-002",
+      "case_id": "CASE-002",
+      "criterion_id": "UX-13",
+      "subject": "Unsaved apartment number",
+      "status": "not_checked",
+      "verdict": null,
+      "steps": [],
+      "expected": "A warning gives the option to stay, or the draft survives reopening.",
+      "observed": null,
+      "evidence": [],
+      "reason": "No mobile fixture was available."
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-001",
+      "title": "Leaving the address editor silently drops the draft",
+      "severity": "medium",
+      "impact": "Customers must re-enter the address after opening Orders.",
+      "check_ids": ["C-001"],
+      "acceptance": ["In CASE-001, leaving offers the option to stay with an explicit warning, or Apartment retains 24 on return."],
+      "fix": {
+        "status": "open",
+        "history": []
+      }
+    }
+  ]
+}
