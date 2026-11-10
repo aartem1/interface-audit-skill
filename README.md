@@ -4,10 +4,10 @@ Two portable [Agent Skills](https://agentskills.io/specification) for auditing a
 
 | Skill | Use it to |
 | --- | --- |
-| [interface-audit](skills/interface-audit/SKILL.md) | Audit a screen, component, journey, or whole accessible app. Apply the [104-check UX and UI reference](skills/interface-audit/references/checklist.md) and save a report with evidence, findings, and coverage gaps. |
+| [interface-audit](skills/interface-audit/SKILL.md) | Audit a screen, component, journey, or whole accessible app. Apply the [UX and UI checklist](skills/interface-audit/references/checklist.md) and save a report with evidence, findings, and coverage gaps. |
 | [interface-fix](skills/interface-fix/SKILL.md) | Fix one finding, selected findings, or the full actionable backlog. Resume from saved progress and verify each repair against its acceptance checks. |
 
-The checklist covers navigation, visual implementation, accessibility, forms, search, payments, performance, platform controls, AI features, and user research. Both skills use the same [report format](skills/interface-audit/references/report-format.md).
+The checklist covers navigation, visual implementation, accessibility, forms, search, payments, performance, platform controls, AI features, and user research. The [visual clarity and information design module](skills/interface-audit/references/visual-content.md) covers what a reader sees first, how to structure copy, and when to use lists, cards, tables, charts, or disclosures. It works with read-only and interactive pages. Both skills use the same [report format](skills/interface-audit/references/report-format.md).
 
 ## Install
 
@@ -39,6 +39,7 @@ For another Agent Skills runtime, use its skill directory. In a runtime without 
 | Goal | Example request |
 | --- | --- |
 | Focused audit | Use `interface-audit` to audit checkout on mobile and with a keyboard at https://staging.example.com. |
+| Read-only page audit | Use `interface-audit` to review this pricing page. A first-time visitor should see whether annual billing is required and compare exact prices and seats. |
 | Whole-app audit | Use `interface-audit` to audit the whole app in this workspace as a signed-in customer. |
 | One fix | Use `interface-fix` to fix the next finding in this report. |
 | Selected fixes | Use `interface-fix` to fix F-002 and F-005 in this report. |

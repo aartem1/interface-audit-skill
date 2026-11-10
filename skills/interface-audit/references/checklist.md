@@ -4,6 +4,7 @@ The core covers interface behavior, visual implementation, and accessibility. Ad
 
 ## Contents
 
+- [Visual clarity and information design](visual-content.md)
 - [How to read the checklist](#how-to-read-the-checklist)
 - [Core](#core)
   - [Goals and navigation](#goals-and-navigation)
@@ -66,6 +67,8 @@ The core criteria are checklist rules based on these principles. [ISO 9241-11](h
 In UX-09, the check after 1 second and the 3-second response delay are checklist defaults for a reproducible run.
 
 ### Visual implementation
+
+Use [visual clarity and information design](visual-content.md) alongside these rendering checks when the user needs to understand or scan a page, whether or not it is interactive.
 
 | ID · Check | Applies when | Test | Yes when |
 | --- | --- | --- | --- |
@@ -213,5 +216,7 @@ An agent can run a flow and verify interface state. Use observational data to de
 | RES-03 · Users find the first action | A flow has a set of acceptable first actions and a target share | Research. Assign the task at the starting screen and record each first meaningful action using the rule defined in advance. | The share of acceptable first actions meets or exceeds the threshold in each required segment. |
 | RES-04 · Audience ratings of a visual property meet the target | One visual property has been defined, along with a question, scale, and threshold, such as for perceived visual clarity | Research. Show the specified screen in the same context and ask members of the audience the same question. | The response statistic chosen in advance reaches the threshold in each required segment. |
 | RES-05 · Perceived ease meets the target | A flow has an ease question, scale, and threshold | Research. Collect a rating on the agreed scale after each valid attempt. | The rating statistic chosen in advance reaches the threshold in each required segment. |
+| RES-06 · First-time readers identify the view's purpose | An audit defines the intended purpose, accepted answers, starting view, exposure, and target share for first-time readers | Research. Show the starting view with no walkthrough for the agreed exposure, then ask what it is for. Score each unprompted response against the accepted answers. | The correct-answer share meets the agreed threshold in each required segment. |
+| RES-07 · First-time readers find and interpret a fact | A view has a defined information question, accepted answers including required qualifications, task limit, and target share | Research. Give first-time readers the neutral question from the agreed entry state. Record their answers and elapsed time without naming the location or control. | The share that gives a correct and complete answer within the task limit without help meets the agreed threshold in each required segment. |
 
 Audience research references. [GOV.UK Moderated Usability Testing](https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing), [GOV.UK Usability Benchmarking](https://www.gov.uk/service-manual/measuring-success/usability-benchmarking-a-website-or-whole-service), [ISO 9241-11](https://www.iso.org/standard/63500.html)
